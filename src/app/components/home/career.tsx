@@ -6,7 +6,7 @@ import { useState } from "react";
 const stats = [
 	{
 		value: 1,
-		unit: "année(s)",
+		unit: "an",
 		label: "Expérience",
 		icon: (
 			<svg
