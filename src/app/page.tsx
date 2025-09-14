@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./components/home/hero";
 import Career from "./components/home/career";
 import Skills from "./components/home/skills";
