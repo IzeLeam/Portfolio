@@ -55,7 +55,7 @@ export default function Contact() {
         ))}
       </ul>
       <small className="text-gray-400 text-sm ml-1">
-        Construisons vos projets ensemble, n'hésitez pas à me contacter via l'un
+        Construisons vos projets ensemble, n&apos;hésitez pas à me contacter via l&apos;un
         des moyens ci-dessus.
       </small>
     </section>
