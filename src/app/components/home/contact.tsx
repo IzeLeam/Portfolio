@@ -3,15 +3,15 @@ const links = [
   {
     label: "LinkedIn",
     icon: "linkedin",
-    url: "https://www.linkedin.com/in/lucapourceau/",
+    url: "https://www.linkedin.com/in/lucaprc/",
   },
   { label: "GitHub", icon: "github", url: "https://github.com/IzeLeam" },
   {
     label: "HackTheBox",
     icon: "hackthebox",
-    url: "https://www.hackthebox.eu/profile/123456",
+    url: "https://app.hackthebox.com/profile/1981887",
   },
-  { label: "RootMe", icon: "rootme", url: "https://www.root-me.org/IzeLeam" },
+  { label: "RootMe", icon: "rootme", url: "https://www.root-me.org/izeleam" },
   { label: "Discord", icon: "discord", url: "https://discord.com/users/560917688449368076" },
 ];
 
