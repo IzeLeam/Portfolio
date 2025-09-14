@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "IzeLeam - Portfolio",
+  title: "Luca Pourceau - Portfolio",
   description: "Luca Pourceau, étudiant en cybersecurité et lead developpeur indépendant",
 };
 

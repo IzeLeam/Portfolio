@@ -14,7 +14,7 @@ const profile = () => (
       height={1256}
       className="rounded-full w-24 mb-2"
     />
-    <h1 className="text-xl font-bold">IzeLeam</h1>
+    <h1 className="text-xl font-bold">Luca Pourceau</h1>
     <h2 className="text-sm">Etudiant en CyberSécurité</h2>
     <h2 className="text-sm">Leader Développeur Indépendant</h2>
     <a
