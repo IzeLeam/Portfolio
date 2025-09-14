@@ -139,7 +139,7 @@ export default function Expertise() {
         {expertiseList.map((item, i) => (
           <li key={i} className="w-full border-b border-[#333]">
             <button
-              className="flex items-center w-full text-left focus:outline-none py-4"
+              className="flex items-center w-full text-left focus:outline-none py-4 cursor-pointer"
               onClick={() => setOpen(open === i ? null : i)}
               aria-expanded={open === i}
               aria-controls={`desc-${i}`}
