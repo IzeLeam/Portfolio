@@ -287,7 +287,7 @@ export default function Career() {
 			</ul>
 			{stats.length > 4 && (
 				<button
-					className="absolute right-8 top-4 text-sm text-gray-400 mt-4 hover:underline cursor-pointer hover:text-blue-400"
+					className="absolute right-8 top-4 text-sm text-blue-400 mt-4 hover:underline cursor-pointer"
 					onClick={() => setShowAll((v) => !v)}
 				>
 					{showAll ? "Voir moins" : "Voir plus"}

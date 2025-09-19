@@ -2,7 +2,7 @@ import Hero from "./components/home/hero";
 import Career from "./components/home/career";
 import Skills from "./components/home/skills";
 import Expertise from "./components/home/expertise";
-import Contact from "./components/home/contact";
+import Contact from "./components/contact";
 
 export default function Home() {
   return (
