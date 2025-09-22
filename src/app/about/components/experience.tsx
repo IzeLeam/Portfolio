@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const experienceList = [
   {
@@ -8,16 +11,16 @@ const experienceList = [
     from: "Sept 2024",
     to: "Présent",
     icon: "univ-rennes.jpg",
-    description: null,
+    description: "Dans l'optique d'une qualité professionnelle optimale, je propose des services de développement et de cybersécurité au plus près des clients pour assurer un support et une adaptation continue aux besoin évolutifs. Principalement niché dans l'écosystème des créateurs de contenu, j'ai l'opportunité de travailler sur des projets variés pour une satisfaction client et utilisateurs optimale.",
   },
   {
     position: "Lead Développeur Java",
-    company: "Rinaorc, Minelia and others (Freelance)",
+    company: "Minelia and others (Freelance)",
     location: "Remote, France",
     from: "Mai 2023",
     to: "Juin 2025",
     icon: "spigot.png",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Développement de plugins Minecraft sur mesure en Java pour des serveurs de toute taille. Gestion de projets, coordination d'équipe et communication avec les clients pour assurer une livraison conforme aux attentes et dans les délais impartis.",
   },
   {
     position: "Consultant ERP",
@@ -26,7 +29,7 @@ const experienceList = [
     from: "Juin 2022",
     to: "Août 2022",
     icon: "cdm.png",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Intégration et amélioration d'un ERP en transition dans la production de l'entreprise. Collaboration avec les développeurs (PrismaSoft) du logiciel pour adapter l'outil aux besoins spécifiques de l'entreprise. Formation des employés à l'utilisation efficace de l'ERP et fourniture d'un support technique continu.",
   },
   {
     position: "Employé Commercial",
@@ -35,11 +38,15 @@ const experienceList = [
     from: "Sept 2021",
     to: "Présent (Saisonnier)",
     icon: "leclerc.png",
-    description: "Accueil et conseil client, gestion des stocks, réassort, caisse, mise en rayon, merchandising.",
+    description: "La polyvalence et le service client sont la clé d'une expérience réussie en grande distribution. Organisation, anticipation et autonomie, tout en travaillant efficacement en équipe pour garantir la satisfaction des clients. Formation des nouveaux employés (saisonnier) sur différents postes.",
   }
 ]
 
 function ExperienceItem({ experience }: { experience: typeof experienceList[0] }) {
+  const [open, setOpen] = useState(false);
+  const desc = experience.description ?? "";
+  const needsButton = desc.length > 100;
+
   return (
     <div className="w-full flex items-start justify-start space-x-4 mb-6 last:mb-0">
       <Image src={'/icons/' + experience.icon} alt={experience.icon} width={900} height={900} className="w-12 h-12 rounded-full"/>
@@ -65,10 +72,18 @@ function ExperienceItem({ experience }: { experience: typeof experienceList[0] }
           </svg>
           <p>{experience.from} - {experience.to}</p>
         </span>
-        <span className="text-sm mt-2">
-          {experience.description}
-        </span>
-        <button className="mt-1 text-sm text-blue-400 hover:underline self-start cursor-pointer">Voir plus</button>
+        <div className="text-sm mt-2">
+          {open ? (
+            <p>{experience.description}</p>
+          ) : (
+            <p className="line-clamp-2">{experience.description}</p>
+          )}
+        </div>
+        {needsButton && (
+          <button onClick={() => setOpen(v => !v)} className="mt-1 text-sm text-blue-400 hover:underline self-start cursor-pointer">
+            {open ? "Voir moins" : "Voir plus"}
+          </button>
+        )}
       </div>
     </div>
   )
@@ -76,7 +91,7 @@ function ExperienceItem({ experience }: { experience: typeof experienceList[0] }
 
 export default function Experience() {
   return (
-    <section className="w-full relative bg-[#212121] p-6 rounded-xl border border-[#333]">
+    <section className="w-full relative p-6 border border-[#333]">
       <h2 className="flex items-center text-2xl font-bold mb-2">
         <svg
           stroke="currentColor"

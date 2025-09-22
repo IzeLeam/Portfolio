@@ -43,41 +43,82 @@ function getIconUrl(name: string) {
   const map: Record<string, string> = {
     "C++": "cplusplus",
     "Next.js": "nextdotjs",
-    "Bash": "gnubash",
-    "HTML": "html5",
-    "Assembly": "assemblyscript",
+    Bash: "gnubash",
+    HTML: "html5",
+    Assembly: "assemblyscript",
     "Node.js": "nodedotjs",
 
-    "Wireshark": "wireshark",
+    Wireshark: "wireshark",
     "Burp Suite": "portswigger",
     "Kali Linux": "kalilinux",
     "John the Ripper": "johntheripper",
     "Aircrack-ng": "aircrackng",
-    "Snort": "snort",
+    Snort: "snort",
 
-    "Git": "git",
-    "Docker": "docker",
-    "GitHub": "github",
-    "Jenkins": "jenkins",
+    Git: "git",
+    Docker: "docker",
+    GitHub: "github",
+    Jenkins: "jenkins",
   };
   let key = name;
   if (map[name]) key = map[name];
   else key = name.toLowerCase().replace(/\s|\./g, "").replace(/\+/g, "plus");
-  return `https://cdn.simpleicons.org/${key}`;
+  return `https://cdn.simpleicons.org/${key}/FFFFFF?000000`;
 }
 
-function InfiniteSlider({ items, speed = 30, direction = "left" }: { items: string[]; speed?: number; direction?: "left" | "right" }) {
+import React, { useEffect, useState } from "react";
+
+function InfiniteSlider({
+  items,
+  speed = 30,
+  direction = "left",
+}: {
+  items: string[];
+  speed?: number;
+  direction?: "left" | "right";
+}) {
+  const [clientItems, setClientItems] = useState(items);
+
+  useEffect(() => {
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
+    setClientItems(shuffled);
+  }, [items]);
+
+  const toRender = clientItems.concat(clientItems);
+
   return (
     <div className="h-[40px] w-full m-auto overflow-hidden relative mt-6">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-16 z-10" style={{background: "linear-gradient(to right, #212121 00%, transparent)"}} />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 z-10" style={{background: "linear-gradient(to left, #212121 00%, transparent)"}} />
       <div
-        className="flex w-max h-full"
-        style={{ minWidth: "100%", animation: `scroll${direction === "left" ? "Left" : "Right"} ${speed}s linear infinite` }}
+        className="pointer-events-none absolute left-0 top-0 h-full w-16 z-10"
+        style={{
+          background: "linear-gradient(to right, black 00%, transparent)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute right-0 top-0 h-full w-16 z-10"
+        style={{
+          background: "linear-gradient(to left, black 00%, transparent)",
+        }}
+      />
+      <div
+        className="flex w-max h-full items-center"
+        style={{
+          minWidth: "100%",
+          animation: `scroll${
+            direction === "left" ? "Left" : "Right"
+          } ${speed}s linear infinite`,
+        }}
       >
-        {items.concat(items).map((name, i) => (
+        {toRender.map((name, i) => (
           <div key={i} className="flex items-center justify-center px-3">
-            <img src={getIconUrl(name)} alt={name} title={name} width={36} height={36} className="object-contain mx-1 hover:scale-110 transition-transform duration-200" />
+            <img
+              src={getIconUrl(name)}
+              alt={name}
+              title={name}
+              width={36}
+              height={36}
+              className="object-contain mx-1 hover:scale-110 transition-transform duration-200"
+            />
           </div>
         ))}
       </div>
@@ -85,13 +126,9 @@ function InfiniteSlider({ items, speed = 30, direction = "left" }: { items: stri
   );
 }
 
-function random() {
-  return Math.random() - 0.5;
-}
-
 export default function Skills() {
   return (
-    <section className="w-full bg-[#212121] p-6 rounded-xl border border-[#333]">
+    <section className="w-full p-6 border border-[#333]">
       <h2 className="flex items-center text-2xl font-bold mb-6 gap-2">
         <svg
           stroke="currentColor"
@@ -111,8 +148,8 @@ export default function Skills() {
         </svg>
         <span>Compétences</span>
       </h2>
-      <InfiniteSlider items={langages.sort(random)} speed={60} direction="left" />
-      <InfiniteSlider items={cyber_tools.sort(random)} speed={30} direction="right" />
+      <InfiniteSlider items={langages} speed={60} direction="left" />
+      <InfiniteSlider items={cyber_tools} speed={30} direction="right" />
     </section>
   );
 }

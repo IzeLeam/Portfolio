@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import Hero from "./components/home/hero";
 import Career from "./components/home/career";
 import Skills from "./components/home/skills";
@@ -6,7 +10,12 @@ import Contact from "./components/contact";
 
 export default function Home() {
   return (
-    <div className="flex gap-4 items-start">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="flex items-start gap-4"
+    >
       <div className="flex flex-col gap-4 w-2/3">
         <Hero />
         <Career />
@@ -16,6 +25,6 @@ export default function Home() {
         <Expertise />
         <Contact />
       </div>
-    </div>
+    </motion.div>
   );
 }

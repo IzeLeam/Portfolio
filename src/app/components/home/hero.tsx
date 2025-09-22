@@ -46,7 +46,6 @@ export default function Hero() {
   useEffect(() => {
     setTyped("");
     let i = 0;
-    let isErasing = false;
     let pauseTimeout: NodeJS.Timeout | null = null;
 
     function typeNext() {
@@ -56,7 +55,6 @@ export default function Hero() {
         typingTimeout.current = setTimeout(typeNext, 30 + Math.random() * 40);
       } else {
         pauseTimeout = setTimeout(() => {
-          isErasing = true;
           eraseNext();
         }, 3200);
       }
@@ -78,7 +76,7 @@ export default function Hero() {
   }, [index]);
 
   return (
-    <section className="relative w-full rounded-xl aspect-[2.5/1] overflow-hidden bg-[#212121]">
+    <section className="relative w-full aspect-[2.5/1] overflow-hidden border border-[#333]">
       <div className="absolute inset-0 bg-black/30 z-10" />
       <div className="absolute inset-0 z-10"
         style={{background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.7) 95%)"}}

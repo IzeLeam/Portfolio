@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="relative w-full rounded-xl aspect-[2.5/1] overflow-hidden bg-[#212121]">
+        <section className="relative w-full aspect-[2.5/1] overflow-hidden border border-[#333]">
             <Image
                 src="/cyber1.jpg"
                 alt="Hero Background"
@@ -12,9 +12,8 @@ export default function Hero() {
             />
             <div className="absolute inset-0 bg-black/30 z-10" />
             <div className="absolute inset-0 z-10"
-                style={{background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.7) 95%)"}}
+                style={{background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 40%, rgba(0,0,0,1) 80%)"}}
             />
-            <div className="absolute bottom-0 left-0 bg-[#212121] w-full h-1/3 z-10 border-t border-[#333]"/>
             <div className="relative z-10 p-6 h-full flex flex-col justify-end">
                 <h1 className="text-2xl font-bold mb-1 ml-36">Luca Pourceau</h1>
                 <p className="text-sm text-gray-300 ml-36">Étudiant en CyberSécurité | Lead Développeur Indépendant</p>

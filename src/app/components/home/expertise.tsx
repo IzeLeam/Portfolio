@@ -116,7 +116,7 @@ const expertiseList = [
 export default function Expertise() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="w-full relative bg-[#212121] p-6 rounded-xl border border-[#333]">
+    <section className="w-full relative p-6 border border-[#333]">
       <h2 className="flex items-center text-2xl font-bold mb-2">
         <svg
           stroke="currentColor"

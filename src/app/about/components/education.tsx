@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 const educationList = [
   {
@@ -10,8 +11,11 @@ const educationList = [
     from: "Sept 2024",
     to: "Aout 2026",
     icon: "univ-rennes.jpg",
-    description: null,
+    description: "Dans le cadre de mon Master en Cybersécurité à l'Université de Rennes, j'approfondis mes connaissances techniques et théoriques pour devenir un expert capable de protéger les systèmes d'information contre les menaces actuelles. Ce programme met l'accent sur la sécurité des réseaux, la cryptographie, l'audit et la conformité, ainsi que sur les aspects juridiques et éthiques de la cybersécurité.",
     courses: [
+        "Jeudis Cyber (conférences mensuelles)",
+        "CTFs et Evènements",
+        "Auteur d'un livre blanc sur le Droit en Cybersécurité",
         "Sécurité des Réseaux",
         "Cryptographie",
         "Audit et Conformité",
@@ -24,8 +28,12 @@ const educationList = [
     from: "Sept 2021",
     to: "Juin 2024",
     icon: "univ-lemans.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: "Dans le cadre de ma Licence en Informatique à l'Université du Mans, j'ai acquis des compétences solides en développement logiciel, en bases de données et en gestion de projets. Ce cursus m'a permis de travailler sur des projets concrets et de collaborer avec des professionnels du secteur.",
     courses: [
+        "Chef de Projet",
+        "Réseaux et Systèmes",
+        "Programmation Orientée Objet",
+        "Programmation systèmes",
         "Algorithmique",
         "Développement Web",
         "Bases de Données",
@@ -34,6 +42,10 @@ const educationList = [
 ]
 
 function EducationItem({ education }: { education: typeof educationList[0] }) {
+  const [open, setOpen] = useState(false);
+  const combined = `${education.description}\nCours principaux : ${education.courses.join(", ")}`;
+  const needsButton = combined.length > 100;
+
   return (
     <div className="w-full flex items-start justify-start space-x-4 mb-6 last:mb-0">
       <Image src={'/icons/' + education.icon} alt={education.institution} width={900} height={900} className="w-12 h-12 rounded-full"/>
@@ -59,12 +71,24 @@ function EducationItem({ education }: { education: typeof educationList[0] }) {
           </svg>
           <p>{education.from} - {education.to}</p>
         </span>
-        <span className="text-sm mt-2">
-          {education.description}
-          {education.description && <br />}
-          <p className="text-sm">Cours principaux : {education.courses.join(", ")}</p>
-        </span>
-        <button className="mt-1 text-sm text-blue-400 hover:underline self-start cursor-pointer">Voir plus</button>
+        <div className="text-sm mt-2">
+          {open ? (
+            <>
+              <p>{education.description}</p>
+              <p className="text-sm mt-2">Cours principaux : {education.courses.join(", ")}</p>
+            </>
+          ) : (
+            <>
+              <p className="line-clamp-2">{education.description}</p>
+              <p className="text-sm mt-2 line-clamp-2">Cours principaux : {education.courses.join(", ")}</p>
+            </>
+          )}
+        </div>
+        {needsButton && (
+          <button onClick={() => setOpen(v => !v)} className="mt-1 text-sm text-blue-400 hover:underline self-start cursor-pointer">
+            {open ? "Voir moins" : "Voir plus"}
+          </button>
+        )}
       </div>
     </div>
   )
@@ -72,7 +96,7 @@ function EducationItem({ education }: { education: typeof educationList[0] }) {
 
 export default function Education() {
   return (
-    <section className="w-full relative bg-[#212121] p-6 rounded-xl border border-[#333]">
+    <section className="w-full relative p-6 border border-[#333]">
       <h2 className="flex items-center text-2xl font-bold mb-6">
         <svg
           stroke="currentColor"

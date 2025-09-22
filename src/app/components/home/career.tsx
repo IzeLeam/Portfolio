@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
 
 const stats = [
 	{
@@ -110,9 +109,9 @@ const stats = [
 		),
 	},
 	{
-		value: 18,
-		unit: null,
-		label: "Technologies",
+		value: 1,
+		unit: "an",
+		label: "Expérience",
 		icon: (
 			<svg
 				stroke="currentColor"
@@ -124,21 +123,21 @@ const stats = [
 				className="rounded-xl block max-w-full h-auto text-[3rem] p-2"
 				style={{
 					background:
-						"linear-gradient(to left, rgb(10, 207, 254) 0%, rgb(73, 90, 255) 100%)",
+						"linear-gradient(to top, rgb(161, 140, 209) 0%, rgb(251, 194, 235) 100%)",
 				}}
 				height="1em"
 				width="1em"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<polyline points="16 18 22 12 16 6"></polyline>
-				<polyline points="8 6 2 12 8 18"></polyline>
+				<circle cx="12" cy="12" r="10"></circle>
+				<polyline points="12 6 12 12 16 14"></polyline>
 			</svg>
 		),
 	},
 	{
-		value: 18,
+		value: 20,
 		unit: null,
-		label: "Technologies",
+		label: "Projets",
 		icon: (
 			<svg
 				stroke="currentColor"
@@ -150,21 +149,23 @@ const stats = [
 				className="rounded-xl block max-w-full h-auto text-[3rem] p-2"
 				style={{
 					background:
-						"linear-gradient(to left, rgb(10, 207, 254) 0%, rgb(73, 90, 255) 100%)",
+						"linear-gradient(to top, rgb(0, 122, 223) 0%, rgb(0, 236, 188) 100%)",
 				}}
 				height="1em"
 				width="1em"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<polyline points="16 18 22 12 16 6"></polyline>
-				<polyline points="8 6 2 12 8 18"></polyline>
+				<path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"></path>
+				<circle cx="13" cy="12" r="2"></circle>
+				<path d="M18 19c-2.8 0-5-2.2-5-5v8"></path>
+				<circle cx="20" cy="19" r="2"></circle>
 			</svg>
 		),
 	},
 	{
-		value: 18,
+		value: 3,
 		unit: null,
-		label: "Technologies",
+		label: "CTF / Bug Bounty",
 		icon: (
 			<svg
 				stroke="currentColor"
@@ -176,19 +177,18 @@ const stats = [
 				className="rounded-xl block max-w-full h-auto text-[3rem] p-2"
 				style={{
 					background:
-						"linear-gradient(to left, rgb(10, 207, 254) 0%, rgb(73, 90, 255) 100%)",
+						"linear-gradient(120deg, rgb(246, 211, 101) 0%, rgb(253, 160, 133) 100%)",
 				}}
 				height="1em"
 				width="1em"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<polyline points="16 18 22 12 16 6"></polyline>
-				<polyline points="8 6 2 12 8 18"></polyline>
+				<path d="M5 21V3.90002C5 3.90002 5.875 3 8.5 3C11.125 3 12.875 4.8 15.5 4.8C18.125 4.8 19 3.9 19 3.9V14.7C19 14.7 18.125 15.6 15.5 15.6C12.875 15.6 11.125 13.8 8.5 13.8C5.875 13.8 5 14.7 5 14.7"></path>
 			</svg>
 		),
 	},
 	{
-		value: 18,
+		value: 35,
 		unit: null,
 		label: "Technologies",
 		icon: (
@@ -252,7 +252,7 @@ export default function Career() {
 	const [showAll, setShowAll] = React.useState(false);
 	const visibleStats = showAll ? stats : stats.slice(0, 4);
 	return (
-		<section className="w-full relative bg-[#212121] p-6 rounded-xl border border-[#333]">
+		<section className="w-full relative p-6 border border-[#333]">
 			<h2 className="flex items-center text-2xl font-bold mb-4">
 				<svg
 					stroke="currentColor"
@@ -270,11 +270,11 @@ export default function Career() {
 				</svg>
 				<span className="ml-2">Statistiques de Carrière</span>
 			</h2>
-			<ul className="w-full grid grid-cols-[repeat(4,1fr)] align-start gap-4">
+			<ul className="w-full grid grid-cols-[repeat(4,1fr)] align-start border border-[#333]">
 				{visibleStats.map((stat, i) => (
 					<li
 						key={i}
-						className="flex flex-col gap-8 rounded-xl p-4 bg-[#333]"
+						className={`flex flex-col gap-8 p-4 ${i >= 4 ? 'border-t border-[#333]' : ''}`}
 					>
 						<div className="flex items-center gap-3">
 							{stat.icon}
