@@ -95,16 +95,15 @@ export default function Projects() {
             return (
               <motion.div
                 key={p.name}
-                layout
+                layout="position" // position-only to avoid transform scaling of text
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ delay: i * 0.05 }}
                 onMouseEnter={() => setHovered(p.name)}
                 onMouseLeave={() => setHovered(h => (h === p.name ? null : h))}
                 onFocus={() => setHovered(p.name)}
                 onBlur={() => setHovered(h => (h === p.name ? null : h))}
-                className={`relative border border-[#333] rounded-lg p-4 bg-[#0d1117] cursor-default overflow-hidden flex flex-col transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 ${expanded ? 'lg:col-span-2 lg:row-span-2 shadow-xl' : 'hover:shadow-lg'} `}
+                className={`relative border border-[#333] rounded-lg p-4 bg-[#0d1117] cursor-default overflow-hidden flex flex-col transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 ${expanded ? 'lg:row-span-2 shadow-xl' : 'hover:shadow-lg'} `}
                 style={{
                   gridColumn: expanded ? undefined : undefined,
                 }}
@@ -167,7 +166,7 @@ export default function Projects() {
                 {/* Expanded content */}
                 {expanded && (
                   <motion.div
-                    layout
+                    layout="position"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
