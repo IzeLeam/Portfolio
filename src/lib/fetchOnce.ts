@@ -3,8 +3,8 @@
 // share a single inflight promise. A short TTL lets immediate remounts reuse the
 // resolved value without keeping stale data around for long.
 
-type CacheEntry = { expires: number; promise: Promise<any> };
-const cache = new Map<string, CacheEntry>();
+type CacheEntry<T = unknown> = { expires: number; promise: Promise<T> };
+const cache = new Map<string, CacheEntry<unknown>>();
 
 /**
  * Fetch JSON once within a short window.
@@ -12,7 +12,7 @@ const cache = new Map<string, CacheEntry>();
  * @param options Fetch options
  * @param ttlMs Time (ms) the cached promise/result remains reusable (default 4000)
  */
-export function fetchJSONOnce<T = any>(url: string, options?: RequestInit, ttlMs = 4000): Promise<T> {
+export function fetchJSONOnce<T = unknown>(url: string, options?: RequestInit, ttlMs = 4000): Promise<T> {
   const now = Date.now();
   const cached = cache.get(url);
   if (cached && cached.expires > now) {
@@ -44,6 +44,4 @@ export function fetchJSONOnce<T = any>(url: string, options?: RequestInit, ttlMs
   return promise;
 }
 
-export function clearFetchOnceCache() {
-  cache.clear();
-}
+export function clearFetchOnceCache() { cache.clear(); }

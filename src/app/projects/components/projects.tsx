@@ -89,7 +89,7 @@ export default function Projects() {
             </div>
           ))}
 
-          {!isLoading && projects && projects.map((p, i) => {
+          {!isLoading && projects && projects.map((p) => {
             const expanded = hovered === p.name && !reducedMotion.current;
             const tags = p.languages.slice(0, 3);
             return (

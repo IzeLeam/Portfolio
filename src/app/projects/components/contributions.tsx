@@ -147,7 +147,6 @@ export default function Contributions() {
               const col = Math.floor(i / 7);
               const row = i % 7;
               const targetLevel = levelFor(d.count);
-              const level = showPalette ? targetLevel : 0;
               const fill = showPalette ? palette[targetLevel] : palette[0];
               const animate = showPalette && targetLevel > 0;
               const delay = animate ? Math.min((col + row * 0.1) * 15, 600) : 0;

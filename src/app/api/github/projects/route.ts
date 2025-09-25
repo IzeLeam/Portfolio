@@ -9,6 +9,17 @@ interface RepoDTO {
   url: string;
 }
 
+interface GitHubRepo {
+  name: string;
+  private: boolean;
+  fork: boolean;
+  description: string | null;
+  stargazers_count: number;
+  languages_url: string;
+  updated_at: string;
+  html_url: string;
+}
+
 const PRIORITY_ORDER = [
   "E.Scan",
   "GhostELFLoader",
@@ -42,22 +53,21 @@ export async function GET() {
       }
     );
     if (!repoRes.ok) return NextResponse.json([], { status: 200 });
-    const repos = await repoRes.json();
-    if (!Array.isArray(repos)) return NextResponse.json([], { status: 200 });
+  const raw = await repoRes.json();
+  if (!Array.isArray(raw)) return NextResponse.json([], { status: 200 });
+  const repos = raw as GitHubRepo[];
 
-    // Base filter (public + not a fork)
-    let filtered = repos.filter((r: any) => !r.private && !r.fork);
+  // Base filter (public + not a fork)
+  let filtered: GitHubRepo[] = repos.filter(r => !r.private && !r.fork);
 
     // Apply hidden list
     if (HIDDEN_REPOS.length) {
       const hiddenSet = new Set(HIDDEN_REPOS.map((n) => n.toLowerCase()));
-      filtered = filtered.filter(
-        (r: any) => !hiddenSet.has(r.name.toLowerCase())
-      );
+      filtered = filtered.filter(r => !hiddenSet.has(r.name.toLowerCase()));
     }
 
     const concurrency = 5;
-    const queue: any[] = [];
+  const queue: GitHubRepo[] = [];
     const results: RepoDTO[] = [];
 
     async function worker() {
@@ -77,7 +87,7 @@ export async function GET() {
             const langJson = await langRes.json();
             languages = Object.keys(langJson).slice(0, 5);
           }
-        } catch (_) {
+        } catch {
           // ignore individual language fetch failures
         }
         results.push({
@@ -118,7 +128,7 @@ export async function GET() {
     }
 
     return NextResponse.json(results, { status: 200 });
-  } catch (e) {
+  } catch {
     return NextResponse.json([], { status: 200 });
   } finally {
     clearTimeout(timeoutId);
