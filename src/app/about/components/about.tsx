@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function About() {
   const [expanded, setExpanded] = useState(false);
-  const preview = "Étudiant en Cybersécurité à l&apos;Université de Rennes, j&apos;ai également 3 ans d&apos;expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu&apos;indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs...";
+  const preview = "Étudiant en Cybersécurité à l'Université de Rennes, j'ai également 3 ans d'expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu'indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs...";
   const full = (
     <>
       Étudiant en Cybersécurité à l&apos;Université de Rennes, j&apos;ai également 3 ans d&apos;expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu&apos;indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs.

@@ -270,11 +270,11 @@ export default function Career() {
 				</svg>
 				<span className="ml-2">Statistiques de Carrière</span>
 			</h2>
-			<ul className="w-full grid grid-cols-[repeat(4,1fr)] align-start border border-[#333]">
+			<ul className="w-full grid grid-cols-[repeat(4,1fr)] align-start gap-4">
 				{visibleStats.map((stat, i) => (
 					<li
 						key={i}
-						className={`flex flex-col gap-8 p-4 ${i >= 4 ? 'border-t border-[#333]' : ''}`}
+						className="flex flex-col gap-8 rounded-lg p-4 bg-[#0d1117]"
 					>
 						<div className="flex items-center gap-3">
 							{stat.icon}

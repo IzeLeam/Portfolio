@@ -15,9 +15,9 @@ type Props = {
 export default function ScrollNavigator({
   nextHref,
   prevHref,
-  cooldown = 500,
+  cooldown = 1000,
   threshold = 0,
-  confirmDistance = 1000,
+  confirmDistance = 0,
   disabled = false,
 }: Props) {
   const router = useRouter();

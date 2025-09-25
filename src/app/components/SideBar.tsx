@@ -21,7 +21,7 @@ const profile = () => (
     <a
       href="/Luca_Pourceau_CV.pdf"
       download
-      className="mt-4 flex items-center justify-center gap-2 bg-[#121212] w-full rounded-lg border border-[#333] text-gray-300 px-4 py-2 hover:text-blue-500 hover:border-blue-500 transition"
+      className="mt-4 flex items-center justify-center gap-2 bg-[#0d1117] w-full rounded-lg border border-[#333] text-gray-300 px-4 py-2 hover:text-blue-500 hover:border-blue-500 transition"
     >
       <span>
         <svg
@@ -102,7 +102,6 @@ export default function SideBar() {
       return;
     }
     const rect = active.getBoundingClientRect();
-    // find nav container top offset
     const nav = active.closest("nav");
     const navRect = nav ? (nav as HTMLElement).getBoundingClientRect() : { top: 0 } as DOMRect;
     setIndicator({ top: rect.top - navRect.top + (nav as HTMLElement).scrollTop, height: rect.height });
