@@ -11,13 +11,13 @@ export default function ProjectsPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="flex gap-4 items-start"
+      className="flex flex-col lg:flex-row gap-2 sm:gap-4 items-start"
     >
-      <div className="flex flex-col gap-4 w-3/4">
+      <div className="flex flex-col gap-2 sm:gap-4 w-full lg:w-3/4">
         <Contributions />
         <Projects />
       </div>
-      <div className="flex flex-col gap-4 w-1/4">
+      <div className="flex flex-col gap-2 sm:gap-4 w-full lg:w-1/4">
         <Contact />
       </div>
     </motion.div>

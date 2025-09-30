@@ -87,15 +87,15 @@ function InfiniteSlider({
   const toRender = clientItems.concat(clientItems);
 
   return (
-    <div className="h-[40px] w-full m-auto overflow-hidden relative mt-6">
+    <div className="h-[30px] sm:h-[40px] w-full m-auto overflow-hidden relative mt-3 sm:mt-6">
       <div
-        className="pointer-events-none absolute left-0 top-0 h-full w-16 z-10"
+        className="pointer-events-none absolute left-0 top-0 h-full w-8 sm:w-16 z-10"
         style={{
           background: "linear-gradient(to right, black 00%, transparent)",
         }}
       />
       <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-16 z-10"
+        className="pointer-events-none absolute right-0 top-0 h-full w-8 sm:w-16 z-10"
         style={{
           background: "linear-gradient(to left, black 00%, transparent)",
         }}
@@ -110,14 +110,14 @@ function InfiniteSlider({
         }}
       >
         {toRender.map((name, i) => (
-          <div key={i} className="flex items-center justify-center px-3">
+          <div key={i} className="flex items-center justify-center px-2 sm:px-3">
             <img
               src={getIconUrl(name)}
               alt={name}
               title={name}
               width={36}
               height={36}
-              className="object-contain mx-1 hover:scale-110 transition-transform duration-200"
+              className="object-contain mx-1 hover:scale-110 transition-transform duration-200 w-6 h-6 sm:w-9 sm:h-9"
             />
           </div>
         ))}
@@ -128,8 +128,8 @@ function InfiniteSlider({
 
 export default function Skills() {
   return (
-    <section className="w-full p-6 border border-[#333]">
-      <h2 className="flex items-center text-2xl font-bold mb-6 gap-2">
+    <section className="w-full p-3 sm:p-6 border border-[#333]">
+      <h2 className="flex items-center text-xl sm:text-2xl font-bold mb-3 sm:mb-6 gap-2">
         <svg
           stroke="currentColor"
           fill="none"

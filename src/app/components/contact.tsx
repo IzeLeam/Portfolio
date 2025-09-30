@@ -27,8 +27,8 @@ function getIconUrl(name: string) {
 
 export default function Contact() {
   return (
-    <section className="w-full relative p-6 border border-[#333]">
-      <h2 className="flex items-center text-2xl font-bold mb-4">
+    <section className="w-full relative p-3 sm:p-6 border border-[#333]">
+      <h2 className="flex items-center text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
         <svg
           stroke="currentColor"
           fill="none"
@@ -45,16 +45,22 @@ export default function Contact() {
         </svg>
         <span className="ml-2">Restons connectés</span>
       </h2>
-      <ul className="flex gap-3 mb-4 ml-1">
+      <ul className="flex gap-2 sm:gap-3 mb-3 sm:mb-4 ml-1 flex-wrap">
         {links.map((link) => (
           <li key={link.label}>
-            <a href={link.url} className="flex items-center">
-                <img src={getIconUrl(link.icon)} alt={link.label} className="w-7 h-7 hover:scale-110 transition-transform" />
+            <a href={link.url} className="flex items-center" aria-label={link.label}>
+                <img 
+                  src={getIconUrl(link.icon)} 
+                  alt={link.label} 
+                  width={28} 
+                  height={28} 
+                  className="w-6 h-6 sm:w-7 sm:h-7 hover:scale-110 transition-transform" 
+                />
             </a>
           </li>
         ))}
       </ul>
-      <small className="text-gray-400 text-sm ml-1">
+      <small className="text-gray-400 text-xs sm:text-sm ml-1">
         Construisons vos projets ensemble, n&apos;hésitez pas à me contacter via l&apos;un
         des moyens ci-dessus.
       </small>

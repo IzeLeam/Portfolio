@@ -116,8 +116,8 @@ const expertiseList = [
 export default function Expertise() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="w-full relative p-6 border border-[#333]">
-      <h2 className="flex items-center text-2xl font-bold mb-2">
+    <section className="w-full relative p-3 sm:p-6 border border-[#333]">
+      <h2 className="flex items-center text-xl sm:text-2xl font-bold mb-2">
         <svg
           stroke="currentColor"
           fill="none"
@@ -139,14 +139,14 @@ export default function Expertise() {
         {expertiseList.map((item, i) => (
           <li key={i} className="w-full border-b border-[#333]">
             <button
-              className="flex items-center w-full text-left focus:outline-none py-4 cursor-pointer"
+              className="flex items-center w-full text-left focus:outline-none py-2 sm:py-4 cursor-pointer"
               onClick={() => setOpen(open === i ? null : i)}
               aria-expanded={open === i}
               aria-controls={`desc-${i}`}
             >
               {item.icon}
-              <div className="ml-4 flex-1">
-                <h3 className="text-lg font-semibold">{item.name}</h3>
+              <div className="ml-2 sm:ml-4 flex-1">
+                <h3 className="text-base sm:text-lg font-semibold">{item.name}</h3>
               </div>
               <span
                 className={`ml-2 transition-transform duration-200 ${
@@ -154,8 +154,9 @@ export default function Expertise() {
                 }`}
               >
                 <svg
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
+                  className="sm:w-6 sm:h-6"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -175,7 +176,7 @@ export default function Expertise() {
                 marginBottom: open === i ? 16 : 0,
               }}
             >
-              <p className="text-md px-2">{item.description}</p>
+              <p className="text-sm sm:text-md px-2">{item.description}</p>
             </div>
           </li>
         ))}

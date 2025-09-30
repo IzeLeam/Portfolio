@@ -252,8 +252,8 @@ export default function Career() {
 	const [showAll, setShowAll] = React.useState(false);
 	const visibleStats = showAll ? stats : stats.slice(0, 4);
 	return (
-		<section className="w-full relative p-6 border border-[#333]">
-			<h2 className="flex items-center text-2xl font-bold mb-4">
+		<section className="w-full relative p-3 sm:p-6 border border-[#333]">
+			<h2 className="flex items-center text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
 				<svg
 					stroke="currentColor"
 					fill="none"
@@ -270,24 +270,24 @@ export default function Career() {
 				</svg>
 				<span className="ml-2">Statistiques de Carrière</span>
 			</h2>
-			<ul className="w-full grid grid-cols-[repeat(4,1fr)] align-start gap-4">
+			<ul className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 align-start gap-2 sm:gap-4">
 				{visibleStats.map((stat, i) => (
 					<li
 						key={i}
-						className="flex flex-col gap-8 rounded-lg p-4 bg-[#0d1117]"
+						className="flex flex-col gap-4 sm:gap-8 rounded-lg p-3 sm:p-4 bg-[#0d1117]"
 					>
-						<div className="flex items-center gap-3">
+						<div className="flex items-center gap-2 sm:gap-3">
 							{stat.icon}
 							<AnimatedNumber value={stat.value} />
-							{stat.unit && <span className="text-md">{stat.unit}</span>}
+							{stat.unit && <span className="text-sm sm:text-md">{stat.unit}</span>}
 						</div>
-						<span className="text-md">{stat.label}</span>
+						<span className="text-sm sm:text-md">{stat.label}</span>
 					</li>
 				))}
 			</ul>
 			{stats.length > 4 && (
 				<button
-					className="absolute right-8 top-4 text-sm text-blue-400 mt-4 hover:underline cursor-pointer"
+					className="absolute right-4 sm:right-8 top-3 sm:top-4 text-xs sm:text-sm text-blue-400 mt-4 hover:underline cursor-pointer"
 					onClick={() => setShowAll((v) => !v)}
 				>
 					{showAll ? "Voir moins" : "Voir plus"}

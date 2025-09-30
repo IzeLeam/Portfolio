@@ -76,12 +76,12 @@ export default function Hero() {
   }, [index]);
 
   return (
-    <section className="relative w-full aspect-[2.5/1] overflow-hidden border border-[#333]">
+    <section className="relative w-full aspect-[16/9] sm:aspect-[2.5/1] overflow-hidden border border-[#333]">
       <div className="absolute inset-0 bg-black/30 z-10" />
       <div className="absolute inset-0 z-10"
         style={{background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.7) 95%)"}}
       />
-      <time className="absolute flex items-center gap-4 top-6 left-6 text-md font-bold z-10">
+      <time className="absolute flex items-center gap-2 sm:gap-4 top-3 sm:top-6 left-3 sm:left-6 text-sm sm:text-md font-bold z-10">
         <svg
           stroke="currentColor"
           fill="none"
@@ -112,9 +112,9 @@ export default function Hero() {
           </div>
         ))}
       </motion.div>
-      <div className="absolute bottom-4 left-4 gap-2 flex items-center 2xl:text-3xl text-2xl z-10">
+      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 gap-2 flex items-center text-lg sm:text-xl lg:text-2xl 2xl:text-3xl z-10">
         <span>{typed}</span>
-        <span className="text-2xl animate-[pulse_1s_infinite] bg-white h-full w-1">
+        <span className="text-lg sm:text-xl lg:text-2xl animate-[pulse_1s_infinite] bg-white h-full w-1">
           |
         </span>
       </div>
