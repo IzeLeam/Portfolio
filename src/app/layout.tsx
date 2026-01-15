@@ -6,7 +6,7 @@ import ScrollNavigatorWrapper from "./components/ScrollNavigatorWrapper";
 import MobileNav from "./components/MobileNav";
 import Script from "next/script";
 
-const siteUrl = "https://lucaprc.fr";
+const siteUrl = "https://portfolio.lucaprc.fr";
 const fullName = "Luca Pourceau";
 const jobTitle = "Étudiant en Cybersécurité & Lead Développeur Indépendant";
 const siteDescription = "Portfolio officiel de Luca Pourceau : cybersécurité, développement web, projets, expertise technique et veille sécurité.";
