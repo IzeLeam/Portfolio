@@ -2,6 +2,21 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Portfolio officiel de Luca Pourceau : cybersécurité, développement web, projets, expertise technique et veille sécurité.",
+  "keywords": [
+    "portfolio",
+    "cybersecurity",
+    "web-development",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "framer-motion",
+    "fullstack",
+    "lead-developer",
+    "security",
+    "personal-website"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
