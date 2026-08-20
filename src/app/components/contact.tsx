@@ -9,7 +9,7 @@ const links = [
   {
     label: "HackTheBox",
     icon: "hackthebox",
-    url: "https://app.hackthebox.com/profile/1981887",
+    url: "https://app.hackthebox.com/users/1981887",
   },
   { label: "RootMe", icon: "rootme", url: "https://www.root-me.org/izeleam" },
   { label: "Discord", icon: "discord", url: "https://discord.com/users/560917688449368076" },

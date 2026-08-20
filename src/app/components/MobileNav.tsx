@@ -126,7 +126,7 @@ export default function MobileNav() {
               {/* Mobile CV download */}
               <div className="p-4 border-t border-[#333]">
                 <a
-                  href="/Luca_Pourceau_CV.pdf"
+                  href="/CV_Luca_Pourceau.pdf"
                   download
                   className="flex items-center justify-center gap-2 bg-[#0d1117] w-full rounded-lg border border-[#333] text-gray-300 px-4 py-3 hover:text-blue-500 hover:border-blue-500 transition"
                 >
@@ -155,7 +155,7 @@ export default function MobileNav() {
                     Conçu et développé par Luca Pourceau
                   </p>
                   <p className="text-xs text-gray-400">
-                    © 2025, Tous droits réservés.
+                    © 2026, Tous droits réservés.
                   </p>
                 </div>
               </footer>

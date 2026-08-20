@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const expertiseList = [
   {
-    name: "Développement Web",
+    name: "Développement Web Full-Stack",
     description:
       "Concevoir des sites web responsifs et dynamiques en utilisant des frameworks et technologies modernes est pour moi la meilleure façon de rendre les applications accessibles et de déployer des solutions au monde.",
     icon: (
@@ -30,36 +30,9 @@ const expertiseList = [
     ),
   },
   {
-    name: "Cyber Sécurité",
+    name: "DevSecOps",
     description:
-      "Protéger les systèmes et réseaux contre les attaques numériques et garantir l'intégrité des données.",
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="none"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="rounded-xl block max-w-full h-auto text-[2.5rem] p-2"
-        style={{
-          background:
-            "linear-gradient(to top, rgb(0, 122, 223) 0%, rgb(0, 236, 188) 100%)",
-        }}
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M10.49 2.23006L5.49997 4.11006C4.34997 4.54006 3.40997 5.90006 3.40997 7.12006V14.5501C3.40997 15.7301 4.18997 17.2801 5.13997 17.9901L9.43997 21.2001C10.85 22.2601 13.17 22.2601 14.58 21.2001L18.88 17.9901C19.83 17.2801 20.61 15.7301 20.61 14.5501V7.12006C20.61 5.89006 19.67 4.53006 18.52 4.10006L13.53 2.23006C12.68 1.92006 11.32 1.92006 10.49 2.23006Z"></path>
-        <path d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z"></path>
-        <path d="M12 12.5V15.5"></path>
-      </svg>
-    ),
-  },
-  {
-    name: "DevOps",
-    description:
-      "Créer et gérer l'infrastructure, l'intégration continue et les pipelines de déploiement afin d'améliorer l'efficacité et la fiabilité du développement. Mettre en place les bonnes pratiques et assurer la cohérence des environnements pour un meilleur flux de travail et une collaboration optimale.",
+      "Architecturer et sécuriser des systèmes d'informations pour des applications, des serveurs et des réseaux. Mise en place de stack complètes pour vos projets ou jeux favoris.",
     icon: (
       <svg
         stroke="currentColor"

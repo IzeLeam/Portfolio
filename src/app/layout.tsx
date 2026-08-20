@@ -8,7 +8,7 @@ import Script from "next/script";
 
 const siteUrl = "https://portfolio.lucaprc.fr";
 const fullName = "Luca Pourceau";
-const jobTitle = "Étudiant en Cybersécurité & Lead Développeur Indépendant";
+const jobTitle = "Expert en Cybersécurité & Lead Développeur Indépendant";
 const siteDescription = "Portfolio officiel de Luca Pourceau : cybersécurité, développement web, projets, expertise technique et veille sécurité.";
 const siteKeywords = [
   "Luca Pourceau",
@@ -128,7 +128,6 @@ export default function RootLayout({
             <SideBar />
           </div>
           <MobileNav />
-          <ScrollNavigatorWrapper />
           <section className="lg:ml-[18%] lg:w-[82%] w-full min-h-screen">
             <div className="flex flex-col p-2 sm:p-4 gap-2 sm:gap-4 min-h-screen">
               {children}
