@@ -105,6 +105,12 @@ export default function Contributions() {
           style={{ display: "block", overflow: "visible" }}
         >
           <g className="react-activity-calendar__legend-month">
+            <text x="765" y="0" dominantBaseline="hanging" fill="currentColor">
+              Aug
+            </text>
+            <text x="850" y="0" dominantBaseline="hanging" fill="currentColor">
+              Sep
+            </text>
             <text x="34" y="0" dominantBaseline="hanging" fill="currentColor">
               Oct
             </text>
@@ -134,12 +140,6 @@ export default function Contributions() {
             </text>
             <text x="697" y="0" dominantBaseline="hanging" fill="currentColor">
               Jul
-            </text>
-            <text x="765" y="0" dominantBaseline="hanging" fill="currentColor">
-              Aug
-            </text>
-            <text x="850" y="0" dominantBaseline="hanging" fill="currentColor">
-              Sep
             </text>
           </g>
           <g>

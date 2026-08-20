@@ -5,7 +5,16 @@ import { useState } from "react";
 
 const experienceList = [
   {
-    position: "Développeur Full-Stack & Consultant en Cybersécurité",
+    position: "Développeur Full-Stack",
+    company: "Orange Cyberdefense",
+    location: "Rennes, France",
+    from: "Mars 2026",
+    to: "Août 2026",
+    icon: "orange.png",
+    description: "Etude, concetion et déploiement d'une application web de monitoring synthétique avec notifications automatiques. Support OTP, éditeur no-code personnalisé, assistant IA intégré. Python, Angular, Robot Framework, FastAPI, MCP, PostgreSQL, Docker, Gitlab CI/CD.",
+  },
+  {
+    position: "Développeur Full-Stack",
     company: "Micro-Entrepreneur",
     location: "Rennes, France",
     from: "Sept 2024",

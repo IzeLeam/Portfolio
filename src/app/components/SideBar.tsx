@@ -16,10 +16,10 @@ const profile = () => (
       className="rounded-full w-16 sm:w-20 lg:w-24 mb-2"
     />
     <h1 className="text-lg sm:text-xl font-bold">Luca Pourceau</h1>
-    <h2 className="text-xs sm:text-sm">Etudiant en CyberSécurité</h2>
-    <h2 className="text-xs sm:text-sm">Leader Développeur Indépendant</h2>
+    <h2 className="text-xs sm:text-sm">Expert en Cybersécurité</h2>
+    <h2 className="text-xs sm:text-sm">Lead Développeur Indépendant</h2>
     <a
-      href="/Luca_Pourceau_CV.pdf"
+      href="/CV_Luca_Pourceau.pdf"
       download
       className="mt-2 sm:mt-4 flex items-center justify-center gap-2 bg-[#0d1117] w-full rounded-lg border border-[#333] text-gray-300 px-2 sm:px-4 py-1 sm:py-2 hover:text-blue-500 hover:border-blue-500 transition"
     >
@@ -77,7 +77,7 @@ const rights_footer = () => (
       Conçu et développé par Luca Pourceau
     </span>
     <span className="text-xs text-gray-400">
-      © 2025, Tous droits réservés.
+      © 2026, Tous droits réservés.
     </span>
   </footer>
 );
@@ -88,8 +88,8 @@ export default function SideBar() {
     { href: "/", label: (<><svg xmlns="http://www.w3.org/2000/svg" className="h-4 sm:h-5 w-4 sm:w-5 mr-2 sm:mr-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span className="text-sm sm:text-base">Accueil</span></>) },
     { href: "/about", label: (<><svg className="h-4 sm:h-5 w-4 sm:w-5 mr-2 sm:mr-4" stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg><span className="text-sm sm:text-base">À propos</span></>) },
     { href: "/projects", label: (<><svg className="h-4 sm:h-5 w-4 sm:w-5 mr-2 sm:mr-4" stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10.7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v4.1"></path><path d="m21 21-1.9-1.9"></path><circle cx="17" cy="17" r="3"></circle></svg><span className="text-sm sm:text-base">Projets</span></>) },
-    { href: "/cyber", label: (<><svg className="w-4 sm:w-5 h-4 sm:h-5 mr-2 sm:mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"><path d="M5.35709 16V5.78571c0-.43393.34822-.78571.77777-.78571H18.5793c.4296 0 .7778.35178.7778.78571V16M5.35709 16h-1c-.55229 0-1 .4477-1 1v1c0 .5523.44771 1 1 1H20.3571c.5523 0 1-.4477 1-1v-1c0-.5523-.4477-1-1-1h-1M5.35709 16H19.3571M9.35709 8l2.62501 2.5L9.35709 13m4.00001 0h2" /></svg><span className="text-sm sm:text-base">Profil Cyber</span></>) },
-    { href: "/blogs", label: (<><span className="text-sm sm:text-base">Blogs</span></>) },
+    //{ href: "/cyber", label: (<><svg className="w-4 sm:w-5 h-4 sm:h-5 mr-2 sm:mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"><path d="M5.35709 16V5.78571c0-.43393.34822-.78571.77777-.78571H18.5793c.4296 0 .7778.35178.7778.78571V16M5.35709 16h-1c-.55229 0-1 .4477-1 1v1c0 .5523.44771 1 1 1H20.3571c.5523 0 1-.4477 1-1v-1c0-.5523-.4477-1-1-1h-1M5.35709 16H19.3571M9.35709 8l2.62501 2.5L9.35709 13m4.00001 0h2" /></svg><span className="text-sm sm:text-base">Profil Cyber</span></>) },
+    //{ href: "/blogs", label: (<><span className="text-sm sm:text-base">Blogs</span></>) },
   ];
 
   const linkRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
