@@ -4,10 +4,10 @@ import React, { useState } from "react";
 
 export default function About() {
   const [expanded, setExpanded] = useState(false);
-  const preview = "Diplomé d'un Master en Cybersécurité, j'ai également 4 ans d'expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu'indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs...";
+  const preview = "Diplomé d&apos;un Master en Cybersécurité, j&apos;ai également 4 ans d'expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu&apos;indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs...";
   const full = (
     <>
-      Diplomé d'un Master en Cybersécurité, j&apos;ai également 4 ans d&apos;expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu&apos;indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs.
+      Diplomé d&apos;un Master en Cybersécurité, j&apos;ai également 4 ans d&apos;expérience dans le domaine informatique en tant que développeur mais aussi en tant que chef de projet. Mon expérience a été principalement acquise dans le domaine du conseil aux clients en tant qu&apos;indépendant. Leader dynamique, je privilégie le partenariat et le travail en équipe pour atteindre les objectifs.
       <br />
       - Grande capacité à initier le changement, à le gérer et à s&apos;y adapter
       <br />
